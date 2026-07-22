@@ -1,0 +1,47 @@
+revelo-xenith/
+├── index.html
+├── package.json
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx                  (routes only — no page content lives here)
+│   ├── index.css                (Tailwind directives + global styles/fonts)
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── ServiceCard.jsx
+│   │   ├── PortfolioCard.jsx
+│   │   ├── TeamCard.jsx
+│   │   ├── TestimonialCard.jsx
+│   │   ├── CTASection.jsx
+│   │   ├── ContactForm.jsx
+│   │   ├── TrustedCompanies.jsx
+│   │   ├── AboutSection.jsx
+│   │   ├── WhyChooseUs.jsx
+│   │   ├── AnimatedCounter.jsx
+│   │   ├── SectionReveal.jsx    (shared scroll-reveal wrapper)
+│   │   └── GlowBackground.jsx   (floating gradient blobs, reused across pages)
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── Services.jsx
+│   │   └── Contact.jsx
+│   │
+│   ├── data/
+│   │   ├── services.js
+│   │   ├── portfolio.js
+│   │   ├── team.js
+│   │   ├── testimonials.js
+│   │   └── companies.js         (trusted-by logo list)
+│   │
+│   ├── hooks/
+│   │   ├── useScrollReveal.js
+│   │   └── useCountUp.js
+│   │
+│   └── assets/
+│       └── logo.svg              (placeholder until real logo is provided)
