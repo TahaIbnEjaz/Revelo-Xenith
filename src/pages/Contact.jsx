@@ -1,13 +1,12 @@
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, MapPin, Globe2 } from 'lucide-react';
 import ContactForm from '../components/ContactForm.jsx';
 import SectionReveal from '../components/SectionReveal.jsx';
 import GlowBackground from '../components/GlowBackground.jsx';
 
 const INFO = [
-  { icon: MapPin, label: 'Office', value: '148 Market Street, Suite 400' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 010-2938' },
-  { icon: Mail, label: 'Email', value: 'hello@revelo-xenith.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon–Fri, 9am–6pm' },
+  { icon: Mail, label: 'Email', value: 'hello@reveloxenith.com' },
+  { icon: MapPin, label: 'Based In', value: 'Pakistan' },
+  { icon: Globe2, label: 'Availability', value: 'Worldwide Services' },
 ];
 
 // Contact page: split layout — info on the left, glass contact form

@@ -9,7 +9,7 @@ export default {
         'rx-navy': '#0C2748',        // secondary background / cards
         'rx-blue': '#2563EB',        // primary accent (buttons, links)
         'rx-cyan': '#4FDFFF',        // glow / highlight accent
-        'rx-charcoal': '#05070C',    // near-black navy, second gradient stop for moving backgrounds
+        'rx-charcoal': '#000000',    // pure black, second gradient stop for moving backgrounds
       },
       fontFamily: {
         // Poppins for display headings, Manrope for body text

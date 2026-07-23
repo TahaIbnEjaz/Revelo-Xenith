@@ -14,12 +14,15 @@ function CTASection() {
           <div className="gradient-border">
             <div className="glass-panel bg-gradient-moving animate-gradient-move rounded-3xl px-8 py-16 sm:px-16">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Let's Build Something{' '}
-                <span className="text-gradient">Amazing Together</span>
+                Ready To Build Something <span className="text-gradient">Extraordinary?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-white/60">
-                Tell us about your goals and we'll put together a plan to get
-                you there — no obligation, just a clear next step.
+                Your business deserves more than attention. It deserves
+                recognition. It deserves growth. It deserves a brand people
+                remember.
+              </p>
+              <p className="mt-2 text-lg font-semibold text-white">
+                Let's Build Your Next Success Story.
               </p>
               <Link
                 to="/contact"

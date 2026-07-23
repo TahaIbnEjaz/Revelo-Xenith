@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Gradient border trick: padding-box + border-box background layering */
 .gradient-border {
   position: relative;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(79, 223, 255, 0.5));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(0, 42, 51, 0.5));
   padding: 1px;
   border-radius: 1rem;
 }
@@ -44,12 +44,11 @@ h1, h2, h3, h4, h5, h6 {
 .bg-gradient-moving {
   background: linear-gradient(
     120deg,
-    #071b34 0%,
-    #0c2748 20%,
-    #2563eb 40%,
-    #05070c 60%,
-    #0c2748 80%,
-    #071b34 100%
+    #000000 0%,
+    #001135 30%,
+    #008cffaf 50%,
+    #001135 70%,
+    #000000 100%
   );
   background-size: 300% 300%;
 }
@@ -71,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Text gradient helper for accent headings */
 .text-gradient {
-  background: linear-gradient(135deg, #4FDFFF 0%, #2563EB 100%);
+  background: linear-gradient(135deg, #008cac 0%, #2563EB 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

@@ -1,59 +1,26 @@
-import { Target, Eye } from 'lucide-react';
 import SectionReveal from './SectionReveal.jsx';
-import AnimatedCounter from './AnimatedCounter.jsx';
-import { useScrollReveal } from '../hooks/useScrollReveal.js';
 
-const STATS = [
-  { end: 184, suffix: '%', label: 'Avg. growth delivered' },
-  { end: 120, suffix: '+', label: 'Projects completed' },
-  { end: 98, suffix: '%', label: 'Client retention rate' },
-  { end: 40, suffix: '+', label: 'Team specialists' },
-];
-
-// Home page "About" block: mission, vision, and a stat bar that
-// counts up once scrolled into view.
+// About section — "Creativity Meets Strategy." Anchored via id="about" so
+// the Navbar's About link can scroll straight to it from any page.
 function AboutSection() {
-  const { ref, isInView } = useScrollReveal(0.4);
-
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-          <SectionReveal className="glass-panel rounded-3xl p-8">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-rx-blue/20">
-              <Target size={22} className="text-rx-cyan" />
-            </div>
-            <h3 className="text-xl font-semibold text-white">Our Mission</h3>
-            <p className="mt-3 leading-relaxed text-white/60">
-              To give ambitious brands the design and strategy of a top agency
-              without the friction — clear communication, fast execution,
-              measurable results.
-            </p>
-          </SectionReveal>
-
-          <SectionReveal delay={0.1} className="glass-panel rounded-3xl p-8">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-rx-cyan/20">
-              <Eye size={22} className="text-rx-cyan" />
-            </div>
-            <h3 className="text-xl font-semibold text-white">Our Vision</h3>
-            <p className="mt-3 leading-relaxed text-white/60">
-              A world where great design and rigorous marketing strategy are
-              treated as one discipline, not two separate vendors.
-            </p>
-          </SectionReveal>
-        </div>
-
-        <div
-          ref={ref}
-          className="mt-16 grid grid-cols-2 gap-8 rounded-3xl glass-panel p-10 sm:grid-cols-4"
-        >
-          {STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <AnimatedCounter end={stat.end} suffix={stat.suffix} start={isInView} />
-              <p className="mt-2 text-sm text-white/50">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+    <section id="about" className="py-24">
+      <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+        <SectionReveal>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Creativity Meets <span className="text-gradient">Strategy.</span>
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-white/60">
+            Revelo Xenith is a creative agency that transforms ambitious ideas
+            into unforgettable brands. We blend strategy, design, technology,
+            and storytelling to build experiences that inspire, connect, and
+            grow.
+          </p>
+          <p className="mt-6 text-xl font-semibold text-white">
+            We don't simply create visuals.{' '}
+            <span className="text-gradient">We create impact.</span>
+          </p>
+        </SectionReveal>
       </div>
     </section>
   );

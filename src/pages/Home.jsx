@@ -1,29 +1,31 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Hero from '../components/Hero.jsx';
-import AboutSection from '../components/AboutSection.jsx';
-import ServiceCard from '../components/ServiceCard.jsx';
-import WhyChooseUs from '../components/WhyChooseUs.jsx';
-import PortfolioCard from '../components/PortfolioCard.jsx';
-import TeamCard from '../components/TeamCard.jsx';
-import TestimonialCard from '../components/TestimonialCard.jsx';
-import CTASection from '../components/CTASection.jsx';
-import SectionReveal from '../components/SectionReveal.jsx';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
+import Hero from '../components/Hero.jsx';
+import ScrollStory from '../components/ScrollStory.jsx';
+import AboutSection from '../components/AboutSection.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import WhyChooseUs from '../components/WhyChooseUs.jsx';
+import ProcessSection from '../components/ProcessSection.jsx';
+import PortfolioCard from '../components/PortfolioCard.jsx';
+import IndustriesSection from '../components/IndustriesSection.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
+import FAQSection from '../components/FAQSection.jsx';
+import CTASection from '../components/CTASection.jsx';
+import SectionReveal from '../components/SectionReveal.jsx';
+
 import services from '../data/services.js';
 import portfolio from '../data/portfolio.js';
-import team from '../data/team.js';
 import testimonials from '../data/testimonials.js';
 
-// Home page: composes every section from the brief in order —
-// Hero, Trusted Companies, About, Services preview, Why Choose Us,
-// Featured Portfolio, Team, Testimonials (auto slider), CTA.
+// Home page: the full agency story in one flowing page, per the brief —
+// Hero, scroll-driven story beat, About, Capabilities, Why Revelo Xenith,
+// Process, Featured Work, Industries, Testimonials, FAQ, Final CTA.
 function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-  // Auto-advance the testimonial slider every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -39,50 +41,40 @@ function Home() {
   return (
     <>
       <Hero />
+      <ScrollStory />
       <AboutSection />
 
-      {/* Services preview */}
-      <section className="py-24">
+      {/* Capabilities (Our Services) */}
+      <section id="capabilities" className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              What We <span className="text-gradient">Do Best</span>
+              Our <span className="text-gradient">Services</span>
             </h2>
-            <p className="mt-4 text-white/60">
-              A full-stack partner for brand, web, and growth.
-            </p>
           </SectionReveal>
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((service, i) => (
-              <SectionReveal key={service.id} delay={i * 0.06}>
+            {services.map((service, i) => (
+              <SectionReveal key={service.id} delay={i * 0.05}>
                 <ServiceCard service={service} />
               </SectionReveal>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/services"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-rx-cyan hover:text-white"
-            >
-              View All Services
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
         </div>
       </section>
 
       <WhyChooseUs />
+      <ProcessSection />
 
-      {/* Featured portfolio (masonry-style grid) */}
+      {/* Featured Work */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Featured <span className="text-gradient">Work</span>
+              Every Project Starts With A Challenge.
+              <br />
+              <span className="text-gradient">Every Result Tells A Story.</span>
             </h2>
-            <p className="mt-4 text-white/60">A sample of recent projects we're proud of.</p>
           </SectionReveal>
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -95,42 +87,24 @@ function Home() {
 
           <div className="mt-12 text-center">
             <Link
-              to="/portfolio"
+              to="/work"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-rx-cyan hover:text-white"
             >
-              View Full Portfolio
+              View Our Work
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionReveal className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Meet the <span className="text-gradient">Team</span>
-            </h2>
-            <p className="mt-4 text-white/60">The people behind the work.</p>
-          </SectionReveal>
-
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((member, i) => (
-              <SectionReveal key={member.id} delay={i * 0.06}>
-                <TeamCard member={member} />
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <IndustriesSection />
 
       {/* Testimonials — auto slider */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              What Clients <span className="text-gradient">Say</span>
+              Trusted By Businesses <span className="text-gradient">That Chose To Rise.</span>
             </h2>
           </SectionReveal>
 
@@ -178,6 +152,7 @@ function Home() {
         </div>
       </section>
 
+      <FAQSection />
       <CTASection />
     </>
   );

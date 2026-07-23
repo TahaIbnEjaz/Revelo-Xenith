@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 
+// Home and the in-page anchor items (About, Capabilities, Process) all
+// resolve against "/" with a hash; Work and Contact are dedicated routes.
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Services', to: '/services' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'About', to: '/#about' },
+  { label: 'Capabilities', to: '/#capabilities' },
+  { label: 'Work', to: '/work' },
+  { label: 'Process', to: '/#process' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -17,6 +21,7 @@ const NAV_LINKS = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,9 +29,18 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const linkClass = ({ isActive }) =>
+  // NavLink can't natively match a hash-only difference against the same
+  // path, so anchor items are highlighted manually against the current
+  // pathname + hash instead of relying on NavLink's isActive.
+  const currentKey = `${location.pathname}${location.hash}`;
+  const isLinkActive = (to) => {
+    if (to === '/') return currentKey === '/';
+    return currentKey === to || (to.includes('#') ? false : location.pathname === to);
+  };
+
+  const linkClass = (to) =>
     `text-sm font-medium transition-colors ${
-      isActive ? 'text-rx-cyan' : 'text-white/70 hover:text-white'
+      isLinkActive(to) ? 'text-rx-cyan' : 'text-white/70 hover:text-white'
     }`;
 
   return (
@@ -39,7 +53,7 @@ function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        {/* Logo — never replaced with text per brand guidelines */}
+        {/* Logo + wordmark — logo image is never replaced with text alone */}
         <Link to="/" className="flex items-center gap-2.5" aria-label="Revelo Xenith home">
           <img src={logo} alt="Revelo Xenith" className="h-9 w-auto" />
           <span className="text-lg font-semibold tracking-tight text-white">
@@ -48,11 +62,11 @@ function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {NAV_LINKS.map((link) => (
-            <NavLink key={link.to} to={link.to} className={linkClass}>
+            <Link key={link.to} to={link.to} className={linkClass(link.to)}>
               {link.label}
-            </NavLink>
+            </Link>
           ))}
         </div>
 
@@ -87,14 +101,14 @@ function Navbar() {
           >
             <div className="flex flex-col gap-4 px-6 py-6">
               {NAV_LINKS.map((link) => (
-                <NavLink
+                <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setMobileOpen(false)}
-                  className={linkClass}
+                  className={linkClass(link.to)}
                 >
                   {link.label}
-                </NavLink>
+                </Link>
               ))}
               <Link
                 to="/contact"

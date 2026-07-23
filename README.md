@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Revelo Xenith — Agency Website
 
 A production-ready multi-page marketing site built with React + Vite,
@@ -26,7 +25,3 @@ npm run build    # production build to /dist
   wire `handleSubmit` up to a real API endpoint when one exists.
 - No Figma file was provided — layout and spacing decisions were made
   directly from the written brief.
-=======
-# Revelo-Xenith
-Front-End website for an advertising agency
->>>>>>> origin/main

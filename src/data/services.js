@@ -1,86 +1,105 @@
-// Core service offerings shown on the Home preview grid and the full Services page.
-// icon: lucide-react component reference, rendered directly in ServiceCard.
+// "Capabilities" content — shown in the in-page Capabilities section on Home.
+// Each service uses short punchy lines (per brand copy) instead of a single
+// paragraph, plus an "Explore X →" label for the CTA link.
 import {
-  Globe,
   Palette,
-  TrendingUp,
-  Megaphone,
   PenTool,
-  BarChart3,
+  Wand2,
+  Globe,
+  MousePointerClick,
+  TrendingUp,
+  FileText,
+  Camera,
+  Box,
+  Megaphone,
 } from 'lucide-react';
 
 const services = [
   {
-    id: 'web-design',
-    icon: Globe,
-    title: 'Web Design & Development',
-    description:
-      'Fast, responsive, conversion-focused websites built to represent your brand at its best.',
-    benefits: [
-      'Custom-coded, no bloated templates',
-      'Built for speed and SEO from day one',
-      'Fully responsive across every device',
-    ],
-  },
-  {
     id: 'branding',
     icon: Palette,
     title: 'Branding & Identity',
-    description:
-      'Distinct visual identities — logo, palette, typography, and voice — that make your brand memorable.',
-    benefits: [
-      'Logo & full visual identity system',
-      'Brand guidelines you can hand to anyone',
-      'Consistent look across every touchpoint',
+    lines: [
+      'Build a brand people recognize.',
+      'A brand people trust.',
+      'A brand people remember.',
     ],
+    exploreLabel: 'Explore Branding',
   },
   {
-    id: 'performance-marketing',
-    icon: TrendingUp,
-    title: 'Performance Marketing',
-    description:
-      'Data-driven paid campaigns across search and social, optimized for real return on ad spend.',
-    benefits: [
-      'Google, Meta & LinkedIn campaign management',
-      'Continuous A/B testing and optimization',
-      'Transparent reporting on every dollar spent',
-    ],
-  },
-  {
-    id: 'social-media',
-    icon: Megaphone,
-    title: 'Social Media Management',
-    description:
-      'Consistent, on-brand content and community management that keeps audiences engaged.',
-    benefits: [
-      'Content calendars planned monthly',
-      'Platform-specific creative direction',
-      'Community management & engagement tracking',
-    ],
-  },
-  {
-    id: 'content-creative',
+    id: 'graphic-design',
     icon: PenTool,
-    title: 'Content & Creative Production',
-    description:
-      'Scroll-stopping graphics, video, and animation designed to convert attention into action.',
-    benefits: [
-      'In-house design and motion team',
-      'Platform-optimized formats',
-      'Fast turnaround without cutting corners',
-    ],
+    title: 'Graphic Design',
+    lines: ['Every design should communicate.', 'Not decorate.'],
+    exploreLabel: 'Explore Design',
   },
   {
-    id: 'seo-analytics',
-    icon: BarChart3,
-    title: 'SEO & Analytics',
-    description:
-      'Technical SEO and clear analytics dashboards so you always know what is working.',
-    benefits: [
-      'Technical audits & on-page optimization',
-      'Custom growth dashboards',
-      'Monthly performance reviews',
+    id: 'digital-art',
+    icon: Wand2,
+    title: 'Digital Art',
+    lines: [
+      'Beyond imagination.',
+      'From esports artwork to cinematic illustrations, we create visuals that make audiences stop scrolling.',
     ],
+    exploreLabel: 'Explore Digital Art',
+  },
+  {
+    id: 'website-design',
+    icon: Globe,
+    title: 'Website Design',
+    lines: [
+      'Beautiful.',
+      'Fast.',
+      'Built to convert.',
+      'Your website should work harder than you do.',
+    ],
+    exploreLabel: 'Explore Websites',
+  },
+  {
+    id: 'ui-ux',
+    icon: MousePointerClick,
+    title: 'UI / UX',
+    lines: ['Every click matters.', 'Every interaction tells your story.'],
+    exploreLabel: 'Explore UX',
+  },
+  {
+    id: 'digital-marketing',
+    icon: TrendingUp,
+    title: 'Digital Marketing',
+    lines: [
+      'Reach the right audience.',
+      'Generate meaningful growth.',
+      'Measure real results.',
+    ],
+    exploreLabel: 'Explore Marketing',
+  },
+  {
+    id: 'content-creation',
+    icon: FileText,
+    title: 'Content Creation',
+    lines: ['Stories that people remember.', 'Content that people share.'],
+    exploreLabel: 'Explore Content',
+  },
+  {
+    id: 'photography-videography',
+    icon: Camera,
+    title: 'Photography & Videography',
+    lines: ['Your story deserves cinematic visuals.'],
+    exploreLabel: 'Explore Visual Production',
+  },
+  {
+    id: '3d-design-animation',
+    icon: Box,
+    title: '3D Design & Animation',
+    lines: ['Ideas become experiences.', 'Products become unforgettable.'],
+    exploreLabel: 'Explore 3D',
+  },
+  {
+    id: 'advertising-campaigns',
+    icon: Megaphone,
+    title: 'Advertising & Campaigns',
+    lines: ['Big ideas deserve bigger campaigns.'],
+    exploreLabel: 'Explore Campaigns',
   },
 ];
 
