@@ -20,7 +20,7 @@ function TestimonialCard({ testimonial }) {
         />
         <div className="text-left">
           <p className="text-sm font-semibold text-white">{testimonial.name}</p>
-          <p className="text-xs text-white/50">{testimonial.company}</p>
+          <p className="text-xs text-white/80">{testimonial.company}</p>
         </div>
       </div>
     </div>

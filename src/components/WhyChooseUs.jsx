@@ -10,7 +10,7 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: 'Transparent Reporting',
-    description: 'Real dashboards, real numbers — you always know what is working.',
+    description: 'Real dashboards, real numbers, you always know what is working.',
   },
   {
     icon: LineChart,
@@ -33,7 +33,7 @@ function WhyChooseUs() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Why Brands Choose <span className="text-gradient">Revelo Xenith</span>
           </h2>
-          <p className="mt-4 text-white/60">
+          <p className="mt-4 text-white/80">
             We pair creative craft with the discipline of performance marketing.
           </p>
         </SectionReveal>
@@ -46,7 +46,7 @@ function WhyChooseUs() {
                   <feature.icon size={20} className="text-rx-cyan" />
                 </div>
                 <h3 className="font-semibold text-white">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/55">
+                <p className="mt-2 text-sm leading-relaxed text-white/80">
                   {feature.description}
                 </p>
               </div>

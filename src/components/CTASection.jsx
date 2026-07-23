@@ -17,9 +17,9 @@ function CTASection() {
                 Let's Build Something{' '}
                 <span className="text-gradient">Amazing Together</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-white/60">
+              <p className="mx-auto mt-4 max-w-xl text-white/80">
                 Tell us about your goals and we'll put together a plan to get
-                you there — no obligation, just a clear next step.
+                you there; no obligation, just a clear next step.
               </p>
               <Link
                 to="/contact"

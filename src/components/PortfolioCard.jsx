@@ -24,9 +24,10 @@ function PortfolioCard({ project }) {
       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-rx-navy-deep/95 via-rx-navy-deep/20 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <span className="text-xs font-medium uppercase tracking-wider text-rx-cyan">
           {project.category}
+          {project.subcategory ? ` · ${project.subcategory}` : ''}
         </span>
         <h3 className="mt-1 text-lg font-semibold text-white">{project.title}</h3>
-        <p className="mt-1 text-sm text-white/60">{project.description}</p>
+        <p className="mt-1 text-sm text-white/80">{project.description}</p>
       </div>
     </motion.div>
   );

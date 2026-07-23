@@ -37,7 +37,7 @@ function ContactForm() {
       <div className="flex h-full flex-col items-center justify-center rounded-3xl glass-panel p-10 text-center">
         <CheckCircle2 size={48} className="text-rx-cyan" />
         <h3 className="mt-4 text-xl font-semibold text-white">Message sent</h3>
-        <p className="mt-2 max-w-sm text-white/60">
+        <p className="mt-2 max-w-sm text-white/80">
           Thanks for reaching out — a member of our team will get back to you
           within one business day.
         </p>

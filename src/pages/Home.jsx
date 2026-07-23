@@ -53,10 +53,12 @@ function Home() {
             </p>
           </SectionReveal>
 
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((service, i) => (
-              <SectionReveal key={service.id} delay={i * 0.06}>
-                <ServiceCard service={service} />
+          {/* Each card links through to the full accordion on /services,
+              where every subcategory underneath it is broken out. */}
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((category, i) => (
+              <SectionReveal key={category.id} delay={i * 0.06}>
+                <ServiceCard service={category} />
               </SectionReveal>
             ))}
           </div>

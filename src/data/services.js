@@ -1,87 +1,135 @@
-// Core service offerings shown on the Home preview grid and the full Services page.
-// icon: lucide-react component reference, rendered directly in ServiceCard.
+// Service catalogue for the Services page (accordion of main categories,
+// each with nested subcategories) and the Home page preview (top-level
+// categories only, linking through to /services).
+//
+// CONTENT STATUS:
+//   - 'web-uiux' (Website Development + UI/UX Design): final copy, written
+//     by Claude per the brief.
+//   - 'animation', 'digital-art', 'graphic-design': placeholder copy only.
+//     Swap the `description` and `benefits` fields once you have finalized,
+//     plagiarism-free text — the structure/UI does not need to change.
+//
+// icon: lucide-react component reference, rendered directly in ServiceCard
+// and the category accordion header.
 import {
   Globe,
   Palette,
+  Clapperboard,
+  Sparkles,
   TrendingUp,
-  Megaphone,
-  PenTool,
-  BarChart3,
 } from 'lucide-react';
 
-const services = [
+const serviceCategories = [
   {
-    id: 'web-design',
+    id: 'web-uiux',
     icon: Globe,
-    title: 'Web Design & Development',
+    title: 'Web Design & UI/UX',
+    status: 'final',
     description:
-      'Fast, responsive, conversion-focused websites built to represent your brand at its best.',
-    benefits: [
-      'Custom-coded, no bloated templates',
-      'Built for speed and SEO from day one',
-      'Fully responsive across every device',
-    ],
+      'Beautiful, high-performing websites and intuitive digital experiences designed to grow your business.',
+    subcategories: [
+    {
+      title: 'Website Development',
+      benefits: [
+        'Business Websites',
+        'E-Commerce Stores',
+        'Landing Pages',
+        'Custom Web Applications',
+      ],
+    },
+    {
+      title: 'UI/UX Design',
+      benefits: [
+        'Wireframing & Prototyping',
+        'User Experience Design',
+        'Design Systems',
+        'Usability Testing',
+      ],
+    },
+  ],
   },
+
   {
-    id: 'branding',
-    icon: Palette,
-    title: 'Branding & Identity',
-    description:
-      'Distinct visual identities — logo, palette, typography, and voice — that make your brand memorable.',
-    benefits: [
-      'Logo & full visual identity system',
-      'Brand guidelines you can hand to anyone',
-      'Consistent look across every touchpoint',
-    ],
-  },
-  {
-    id: 'performance-marketing',
-    icon: TrendingUp,
-    title: 'Performance Marketing',
-    description:
-      'Data-driven paid campaigns across search and social, optimized for real return on ad spend.',
-    benefits: [
-      'Google, Meta & LinkedIn campaign management',
-      'Continuous A/B testing and optimization',
-      'Transparent reporting on every dollar spent',
-    ],
-  },
-  {
-    id: 'social-media',
-    icon: Megaphone,
-    title: 'Social Media Management',
-    description:
-      'Consistent, on-brand content and community management that keeps audiences engaged.',
-    benefits: [
-      'Content calendars planned monthly',
-      'Platform-specific creative direction',
-      'Community management & engagement tracking',
-    ],
-  },
-  {
-    id: 'content-creative',
-    icon: PenTool,
-    title: 'Content & Creative Production',
-    description:
-      'Scroll-stopping graphics, video, and animation designed to convert attention into action.',
-    benefits: [
-      'In-house design and motion team',
-      'Platform-optimized formats',
-      'Fast turnaround without cutting corners',
-    ],
-  },
-  {
-    id: 'seo-analytics',
-    icon: BarChart3,
-    title: 'SEO & Analytics',
-    description:
-      'Technical SEO and clear analytics dashboards so you always know what is working.',
-    benefits: [
-      'Technical audits & on-page optimization',
-      'Custom growth dashboards',
-      'Monthly performance reviews',
-    ],
-  },
+  id: 'branding',
+  icon: Palette,
+  title: 'Branding & Graphic Design',
+  description:
+    'Create a strong visual identity that builds trust and makes your brand unforgettable.',
+  subcategories: [
+    {
+      title: 'Brand Identity',
+      benefits: [
+        'Brand Strategy',
+        'Logo Design',
+        'Visual Identity',
+        'Brand Guidelines',
+      ],
+    },
+    {
+      title: 'Marketing Design',
+      benefits: [
+        'Social Media Graphics',
+        'Print Design',
+        'Packaging Design',
+        'Business Stationery',
+      ],
+    },
+  ],
+},
+      {
+  id: 'marketing',
+  icon: TrendingUp,
+  title: 'Digital Marketing & Growth',
+  description:
+    'Reach the right audience with data-driven strategies that increase visibility, leads, and sales.',
+  subcategories: [
+    {
+      title: 'Marketing Services',
+      benefits: [
+        'SEO',
+        'Google & Meta Ads',
+        'Social Media Marketing',
+        'Email Marketing',
+      ],
+    },
+    {
+      title: 'Campaign Strategy',
+      benefits: [
+        'Marketing Strategy',
+        'Campaign Planning',
+        'Analytics',
+        'Performance Reporting',
+      ],
+    },
+  ],
+},
+      {
+  id: 'creative',
+  icon: Clapperboard,
+  title: 'Creative Media & Animation',
+  description:
+    'Bring your ideas to life with stunning visuals, animation, illustrations, and creative content.',
+  subcategories: [
+    {
+      title: 'Digital Art',
+      benefits: [
+        'Illustration',
+        'Character Design',
+        'Mascot Design',
+        'Concept Art',
+      ],
+    },
+    {
+      title: 'Animation',
+      benefits: [
+        '3D Animation',
+        'Motion Graphics',
+        'Product Animation',
+        'Post Production',
+      ],
+    },
+  ],
+}
 ];
 
-export default services;
+export default serviceCategories;

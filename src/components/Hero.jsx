@@ -29,7 +29,7 @@ function Hero() {
             <span className="text-gradient">Digital Excellence</span>
           </h1>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/60">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/80">
             Revelo Xenith blends strategy, design, and performance marketing
             to turn ambitious brands into market leaders.
           </p>

@@ -10,10 +10,10 @@ const FOOTER_LINKS = {
     { label: 'Contact', to: '/contact' },
   ],
   Services: [
-    { label: 'Web Design', to: '/services' },
-    { label: 'Branding', to: '/services' },
-    { label: 'Performance Marketing', to: '/services' },
-    { label: 'Social Media', to: '/services' },
+    { label: 'Web Design & UI/UX', to: '/services' },
+    { label: 'Animation', to: '/services' },
+    { label: 'Digital Art & Illustration', to: '/services' },
+    { label: 'Graphic Design', to: '/services' },
   ],
 };
 

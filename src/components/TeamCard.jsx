@@ -12,7 +12,7 @@ function TeamCard({ member }) {
       </div>
       <h3 className="mt-4 font-semibold text-white">{member.name}</h3>
       <p className="text-sm text-rx-cyan">{member.role}</p>
-      <p className="mt-3 text-sm leading-relaxed text-white/55">{member.bio}</p>
+      <p className="mt-3 text-sm leading-relaxed text-white/80">{member.bio}</p>
     </div>
   );
 }
