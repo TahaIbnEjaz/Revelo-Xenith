@@ -4,7 +4,7 @@ import SectionReveal from './SectionReveal.jsx';
 const FEATURES = [
   {
     icon: Zap,
-    title: 'Fast, No-Nonsense Execution',
+    title: 'Fast Execution',
     description: 'Projects move quickly without sacrificing craft or quality control.',
   },
   {

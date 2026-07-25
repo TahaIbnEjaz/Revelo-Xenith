@@ -68,7 +68,7 @@ function Home() {
               to="/services"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-rx-cyan hover:text-white"
             >
-              View All Services
+              View Our CAPABILITIES
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -100,7 +100,7 @@ function Home() {
               to="/portfolio"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-rx-cyan hover:text-white"
             >
-              View Full Portfolio
+              View Our WORK
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -119,10 +119,10 @@ function Home() {
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member, i) => (
-              <SectionReveal key={member.id} delay={i * 0.06}>
-                <TeamCard member={member} />
-              </SectionReveal>
-            ))}
+  <SectionReveal key={member.id} className="h-full" delay={i * 0.06}>
+    <TeamCard member={member} />
+  </SectionReveal>
+))}
           </div>
         </div>
       </section>

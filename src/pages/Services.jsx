@@ -19,7 +19,7 @@ function Services() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Our <span className="text-gradient">Services</span>
+              Our <span className="text-gradient">Capabilities</span>
             </h1>
             <p className="mt-4 text-white/60">
               Everything you need to design, launch, and grow — under one roof.

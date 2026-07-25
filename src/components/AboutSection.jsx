@@ -25,9 +25,9 @@ function AboutSection() {
             </div>
             <h3 className="text-xl font-semibold text-white">Our Mission</h3>
             <p className="mt-3 leading-relaxed text-white/80">
-              To give ambitious brands the design and strategy of a top agency
-              without the friction; clear communication, fast execution,
-              measurable results.
+              To empower businesses through strategic branding, 
+              innovative design, and digital solutions that inspire, 
+              connect, and drive sustainable growth.
             </p>
           </SectionReveal>
 
@@ -37,8 +37,8 @@ function AboutSection() {
             </div>
             <h3 className="text-xl font-semibold text-white">Our Vision</h3>
             <p className="mt-3 leading-relaxed text-white/80">
-              A world where great design and rigorous marketing strategy are
-              treated as one discipline, not two separate vendors.
+             To become a globally recognized creative agency, 
+             building brands that innovate, inspire, and leave a lasting impact.
             </p>
           </SectionReveal>
         </div>

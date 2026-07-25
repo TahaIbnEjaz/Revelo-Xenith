@@ -6,8 +6,8 @@ import logo from '../assets/logo.png';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Services', to: '/services' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Capabilities', to: '/services' },
+  { label: 'Work', to: '/portfolio' },
   { label: 'Contact', to: '/contact' },
 ];
 
@@ -40,7 +40,7 @@ function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo — never replaced with text per brand guidelines */}
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Revelo Xenith home">
+        <Link to="/" className="flex items-center" aria-label="Revelo Xenith home">
           <img src={logo} alt="Revelo Xenith" className="h-9 w-auto" />
           <span className="text-lg font-semibold tracking-tight text-white">
             Revelo <span className="text-rx-cyan">Xenith</span>

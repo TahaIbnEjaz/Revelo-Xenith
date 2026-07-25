@@ -17,6 +17,7 @@ import {
   Clapperboard,
   Sparkles,
   TrendingUp,
+  Video,
 } from 'lucide-react';
 
 const serviceCategories = [
@@ -108,7 +109,7 @@ const serviceCategories = [
   icon: Clapperboard,
   title: 'Creative Media & Animation',
   description:
-    'Bring your ideas to life with stunning visuals, animation, illustrations, and creative content.',
+    'Bring your ideas to life with stunning visuals, animation and illustrations.',
   subcategories: [
     {
       title: 'Digital Art',
@@ -129,7 +130,29 @@ const serviceCategories = [
       ],
     },
   ],
-}
+},
+{
+  id : 'Content',
+  icon : Video,
+  title : 'Content Creation',
+  description : 
+  'We create compelling content that informs, entertains, educates, and converts.',
+  subcategories: [
+    {
+      title : 'Contents',
+      benefits : [
+        'Brand Storytelling',
+        'Copywriting',
+        'Social Media Content',
+        'Blog Writing',
+        'Product Descriptions',
+        'Campaign Concepts',
+        'Creative Scripts',
+        'Content Strategy',
+      ],
+    },
+  ],
+ },
 ];
 
 export default serviceCategories;
