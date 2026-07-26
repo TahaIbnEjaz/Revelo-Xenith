@@ -1,0 +1,49 @@
+import { useState } from 'react';
+import ServiceCategoryAccordion from '../components/ServiceCategoryAccordion.jsx';
+import SectionReveal from '../components/SectionReveal.jsx';
+import CTASection from '../components/CTASection.jsx';
+import serviceCategories from '../data/services.js';
+
+// Full Services page: main categories rendered as an accordion, each
+// expanding to reveal its nested subcategories (or its own benefits,
+// for categories with no subcategories). The first category is open
+// by default so the page never looks empty on load.
+function Services() {
+  const [openId, setOpenId] = useState(serviceCategories[0]?.id ?? null);
+
+  const toggle = (id) => setOpenId((current) => (current === id ? null : id));
+
+  return (
+    <div>
+      <div className="pt-40 pb-16">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <SectionReveal className="mx-auto max-w-2xl text-center">
+            <h1 className="text-4xl font-bold text-white sm:text-5xl">
+              Our <span className="text-gradient">Capabilities</span>
+            </h1>
+            <p className="mt-4 text-white/60">
+              Everything you need to design, launch, and grow — under one roof.
+              Explore each category below to see what's included.
+            </p>
+          </SectionReveal>
+
+          <div className="mt-14 space-y-5">
+            {serviceCategories.map((category, i) => (
+              <SectionReveal key={category.id} delay={i * 0.06}>
+                <ServiceCategoryAccordion
+                  category={category}
+                  isOpen={openId === category.id}
+                  onToggle={() => toggle(category.id)}
+                />
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <CTASection />
+    </div>
+  );
+}
+
+export default Services;

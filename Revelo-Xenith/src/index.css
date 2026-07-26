@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+   Global base styles for Revelo Xenith
+   ========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-rx-navy-deep text-white font-body antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display;
+}
+
+/* Reusable glass panel effect used across cards, navbar, forms */
+.glass-panel {
+  background: rgba(12, 39, 72, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(79, 223, 255, 0.12);
+}
+
+/* Gradient border trick: padding-box + border-box background layering */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.5), rgba(79, 223, 255, 0.5));
+  padding: 1px;
+  border-radius: 1rem;
+}
+.gradient-border > * {
+  border-radius: calc(1rem - 1px);
+}
+
+/* Moving gradient background: shifts between the brand blue/cyan gradient
+   and a dark charcoal-navy, for sections that want a slow ambient motion
+   instead of a flat/static background. */
+.bg-gradient-moving {
+  background: linear-gradient(
+    120deg,
+    #071b34 0%,
+    #0c2748 20%,
+    #192b53 40%,
+    #05070c 60%,
+    #0c2748 80%,
+    #071b34 100%
+  );
+  background-size: 300% 300%;
+}
+
+/* Custom scrollbar to match dark premium theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #071B34;
+}
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4FDFFF;
+}
+
+/* Text gradient helper for accent headings */
+.text-gradient {
+  background: linear-gradient(135deg, #4FDFFF 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
