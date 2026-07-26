@@ -17,7 +17,7 @@ import {
   Clapperboard,
   Sparkles,
   TrendingUp,
-  Video,
+  Pen,
 } from 'lucide-react';
 
 const serviceCategories = [
@@ -133,7 +133,7 @@ const serviceCategories = [
 },
 {
   id : 'Content',
-  icon : Video,
+  icon : Pen,
   title : 'Content Creation',
   description : 
   'We create compelling content that informs, entertains, educates, and converts.',
