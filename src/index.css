@@ -76,3 +76,188 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   color: transparent;
 }
+
+/* ==========================================================
+   Hero energy-field visual — decorative utilities only. Used
+   exclusively inside the right-side hero graphic in Hero.jsx.
+   ========================================================== */
+
+/* Faint technical grid, faded toward the edges so it reads as
+   atmosphere behind the energy field rather than a hard tile. */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(79, 223, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 223, 255, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+}
+
+/* Near-invisible film-grain texture for extra depth — pure CSS via an
+   inline SVG turbulence filter, no external asset. */
+.hero-noise {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+}
+
+.whatsapp-float {
+position: fixed;
+right: 1.5rem;
+bottom: 1.5rem;
+z-index: 60;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 56px;
+height: 56px;
+border-radius: 9999px;
+transform: scale(0.2);
+opacity: 0;
+transition: transform 280ms cubic-bezier(.2,.9,.3,1), opacity 280ms ease;
+pointer-events: auto;
+}
+.whatsapp-float--visible {
+transform: scale(1);
+opacity: 1;
+animation: whatsapp-pop 640ms cubic-bezier(.2,.9,.3,1) both;
+}
+.whatsapp-float__inner {
+width: 48px;
+height: 48px;
+border-radius: 9999px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: #25d366;
+box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+overflow: hidden;
+will-change: transform;
+}
+.whatsapp-float--visible .whatsapp-float__inner {
+animation: whatsapp-bob 3s ease-in-out 640ms infinite;
+}
+.whatsapp-float__img {
+width: 60%;
+height: 60%;
+object-fit: cover;
+display: block;
+filter: saturate(1.05);
+transform-origin: center;
+-webkit-user-drag: none;
+}
+
+/* Keyframes */
+@keyframes whatsapp-pop {
+0% { transform: scale(0.2); opacity: 0; }
+60% { transform: scale(1.12); opacity: 1; }
+100% { transform: scale(1); opacity: 1; }
+}
+@keyframes whatsapp-bob {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-6px); }
+}
+/* Lower-hero star/light-streak: thin cyan/blue glowing bars that drift
+   from the lower-left toward the upper-right, behind all hero content.
+   Used exclusively inside the decorative streak layer in Hero.jsx. */
+.hero-streak {
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  transform-origin: 0% 50%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(37, 99, 235, 0.35) 45%,
+    rgba(79, 223, 255, 0.9) 100%
+  );
+  box-shadow: 0 0 6px 1px rgba(79, 223, 255, 0.45);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: hero-streak-travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hero-streak-travel {
+  0% {
+    transform: translate(0, 0) rotate(-42deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--streak-opacity, 0.45);
+  }
+  80% {
+    opacity: var(--streak-opacity, 0.45);
+  }
+  100% {
+    transform: translate(150px, -135px) rotate(-42deg);
+    opacity: 0;
+  }
+}
+
+/* Defense-in-depth: even if the JS-level reduced-motion check in
+   Hero.jsx were ever bypassed, the animation itself stays inert. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-streak {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* WhatsApp floating pop-in + bob */
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  transform: scale(0.2);
+  opacity: 0;
+  transition: transform 280ms cubic-bezier(.2,.9,.3,1), opacity 280ms ease;
+  pointer-events: auto;
+}
+.whatsapp-float--visible {
+  transform: scale(1);
+  opacity: 1;
+  animation: whatsapp-pop 640ms cubic-bezier(.2,.9,.3,1) both;
+}
+.whatsapp-float__inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+  will-change: transform;
+}
+.whatsapp-float--visible .whatsapp-float__inner {
+  animation: whatsapp-bob 3s ease-in-out 640ms infinite;
+}
+.whatsapp-float__img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+  transform-origin: center;
+  -webkit-user-drag: none;
+}
+
+@keyframes whatsapp-pop {
+  0% { transform: scale(0.2); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes whatsapp-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

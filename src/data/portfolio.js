@@ -1,112 +1,211 @@
-// Portfolio project entries. `category` matches a top-level title from
-// data/services.js; `subcategory` (optional) matches a subcategory title
-// within that category. The Portfolio page filters on both levels.
-//
+import D1 from '../assets/work/3D/D1.png';
+import D2 from '../assets/work/3D/D2.png';
+import D3 from '../assets/work/3D/D3.png';
+import D4 from '../assets/work/3D/D4.png';
+import A1 from '../assets/work/Animation/A1.mp4';
+import A2 from '../assets/work/Animation/A2.mp4';
+import A3 from '../assets/work/Animation/A3.mp4';
+import A4 from '../assets/work/Animation/A4.mp4';
+import DM1 from '../assets/work/Digital_Marketing/DM1.jpeg';
+import DM2 from '../assets/work/Digital_Marketing/DM2.jpeg';
+import GD1 from '../assets/work/Graphic_Design/GD1.jpeg';
+import GD2 from '../assets/work/Graphic_Design/GD2.jpeg';
+import GD3 from '../assets/work/Graphic_Design/GD3.jpeg';
+import I1 from '../assets/work/Illustrations/I1.jpg';
+import I2 from '../assets/work/Illustrations/I2.jpeg';
+import I3 from '../assets/work/Illustrations/I3.jpeg';
+import I4 from '../assets/work/Illustrations/I4.jpeg';
+import I5 from '../assets/work/Illustrations/I5.jpeg';
+import I6 from '../assets/work/Illustrations/I6.jpeg';
+import U1 from '../assets/work/UI/U1.png';
+import U2 from '../assets/work/UI/U2.jpeg';
+import U3 from '../assets/work/UI/U3.jpeg';
+import U4 from '../assets/work/UI/U4.jpeg';
 // Categories: Web Design & UI/UX, Animation, Digital Art & Illustration, Graphic Design
 const portfolio = [
   {
     id: 'p1',
-    title: 'Aurora Finance — Web Platform',
+    title: '',
     category: 'Web Design & UI/UX',
-    subcategory: 'Website Development',
-    client: 'Aurora Finance',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    description: 'A full rebuild of a fintech dashboard focused on clarity and trust.',
+    client: '',
+    image: U1,
+    description: '',
   },
   {
     id: 'p2',
-    title: 'Nimbus App — UI/UX Redesign',
-    category: 'Web Design & UI/UX',
-    subcategory: 'UI/UX Design',
-    client: 'Nimbus',
-    image: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=800&q=80',
-    description: 'End-to-end UX overhaul improving onboarding conversion by 38%.',
+    title: '',
+    category: 'Graphic Design',
+    client: '',
+    image: GD2,
+    description: '',
   },
   {
     id: 'p3',
-    title: 'Solace Skincare — Brand Identity',
-    category: 'Graphic Design',
-    client: 'Solace',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
-    description: 'A calm, minimal identity system for a premium skincare line.',
+    title: '',
+    category: 'Digital Marketing',
+    client: '',
+    image: DM1,
+    description: '',
   },
   {
     id: 'p4',
-    title: 'Voltage EV — Launch Animation',
+    title: '',
     category: 'Animation',
-    subcategory: 'Product Animation',
-    client: 'Voltage',
-    image: 'https://images.unsplash.com/photo-1617704548623-340376564e68?w=800&q=80',
-    description: 'Motion-led product reveal for an EV launch campaign.',
+    client: '',
+    image: A2,
+    description: '',
   },
   {
     id: 'p5',
-    title: 'Harbor Coffee — Illustrated Campaign',
-    category: 'Digital Art & Illustration',
-    client: 'Harbor Coffee Co.',
-    image: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80',
-    description: 'A custom illustration set built for a 3-month social content push.',
+    title: '',
+    category: 'Graphic Design',
+    client: '',
+    image: GD1,
+    description: '',
   },
   {
     id: 'p6',
-    title: 'Pinnacle Realty — Website',
+    title: '',
     category: 'Web Design & UI/UX',
-    subcategory: 'Website Development',
-    client: 'Pinnacle Realty',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    description: 'A listings-heavy real estate site optimized for lead capture.',
+    client: '',
+    image: U2,
+    description: '',
   },
   {
     id: 'p7',
-    title: 'Fable Books — App UX',
-    category: 'Web Design & UI/UX',
-    subcategory: 'UI/UX Design',
-    client: 'Fable',
-    image: 'https://images.unsplash.com/photo-1512820790803-83ca734e97c4?w=800&q=80',
-    description: 'A reading app redesign that simplified discovery to one tap.',
+    title: '',
+    category: '3D Art',
+    client: '',
+    image: D1,
+    description: '',
   },
   {
     id: 'p8',
-    title: 'Northwind Outdoors — Print & Packaging',
-    category: 'Graphic Design',
-    client: 'Northwind',
-    image: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=800&q=80',
-    description: 'Rugged, nature-inspired packaging system across 12 SKUs.',
+    title: '',
+    category: '3D Art',
+    client: '',
+    image: D2,
+    description: '',
   },
   {
     id: 'p9',
-    title: 'Solstice Studios — Environment Reel',
+    title: '',
     category: 'Animation',
-    subcategory: 'Environmental Animation',
-    client: 'Solstice Studios',
-    image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80',
-    description: 'A fully animated environment reel built for a game trailer pitch.',
+    client: '',
+    image: A1,
+    description: '',
   },
   {
     id: 'p10',
-    title: 'Kaida Games — Character Turnaround',
+    title: '',
     category: 'Animation',
-    subcategory: '3D Character Modeling & Character Animation',
-    client: 'Kaida Games',
-    image: 'https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?w=800&q=80',
-    description: 'Concept-to-rig 3D hero character with a full animation turnaround.',
+    client: '',
+    image: A3,
+    description: '',
   },
   {
     id: 'p11',
-    title: 'Meridian Films — Color & Composite',
+    title: '',
     category: 'Animation',
-    subcategory: 'Post-Production / Post-Animation',
-    client: 'Meridian Films',
-    image: 'https://images.unsplash.com/photo-1489599162946-9c9f0e8b5b73?w=800&q=80',
-    description: 'Final compositing, grade, and sound polish for a short-form release.',
+    client: '',
+    image: A4,
+    description: '',
   },
   {
     id: 'p12',
-    title: 'Wraith & Co — Concept Art Series',
-    category: 'Digital Art & Illustration',
-    client: 'Wraith & Co',
-    image: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&q=80',
-    description: 'A series of original concept art pieces for a brand narrative launch.',
+    title: '',
+    category: '3D Art',
+    client: "",
+    image: D3,
+    description: '',
+  },
+  {
+    id: 'p13',
+    title: '',
+    category: '3D Art',
+    client: "",
+    image: D4,
+    description: '',
+  },
+  {
+    id: 'p14',
+    title: '',
+    category: 'Digital Marketing',
+    client: '',
+    image: DM2,
+    description: '',
+  },
+  {
+    id: 'p15',
+    title: '',
+    category: 'Graphic Design',
+    client: '',
+    image: GD3,
+    description: '',
+  },
+  {
+    id: 'p17',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I1,
+    description: '',
+  },
+  {
+    id: 'p18',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I2,
+    description: '',
+  },
+  {
+    id: 'p19',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I3,
+    description: '',
+  },
+  {
+    id: 'p20',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I4,
+    description: '',
+  },
+  {
+    id: 'p21',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I5,
+    description: '',
+  },
+  {
+    id: 'p22',
+    title: '',
+    category: 'Illustrations',
+    client: '',
+    image: I6,
+    description: '',
+  },
+  {
+    id: 'p23',
+    title: '',
+    category: 'Web Design & UI/UX',
+    client: '',
+    image: U3,
+    description: '',
+  },
+  {
+    id: 'p24',
+    title: '',
+    category: 'Web Design & UI/UX',
+    client: '',
+    image: U4,
+    description: '',
   },
 ];
 

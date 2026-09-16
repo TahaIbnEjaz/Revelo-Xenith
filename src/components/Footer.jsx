@@ -25,7 +25,7 @@ function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <Link to="/" className="inline-flex items-center">
+            <Link to="/" className="inline-flex items-center gap-2.5">
               <img src={logo} alt="Revelo Xenith" className="h-9 w-auto" />
               <span className="text-lg font-semibold tracking-tight text-white">
                 Revelo <span className="text-rx-cyan">Xenith</span>
@@ -74,15 +74,15 @@ function Footer() {
             <ul className="space-y-3 text-sm text-white/50">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-rx-cyan" />
-                <span>148 Market Street, Suite 400</span>
+                <span>Karachi,Pakistan</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0 text-rx-cyan" />
-                <span>+1 (555) 010-2938</span>
+                <span>+92 326 3321658</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 text-rx-cyan" />
-                <span>hello@revelo-xenith.com</span>
+                <span>reveloxenith@gmail.com</span>
               </li>
             </ul>
           </div>

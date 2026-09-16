@@ -3,18 +3,25 @@ import { AnimatePresence, motion } from 'framer-motion';
 import PortfolioCard from '../components/PortfolioCard.jsx';
 import SectionReveal from '../components/SectionReveal.jsx';
 import portfolioData from '../data/portfolio.js';
-import serviceCategories from '../data/services.js';
 
 // Two-level filtering, driven by the same category/subcategory taxonomy
 // as the Services page:
 //   1. Main category tabs (All, Web Design & UI/UX, Animation, ...)
 //   2. Subcategory pills — only shown once a category with subcategories
 //      is selected (e.g. Animation -> Product Animation, Environmental...)
-const CATEGORY_TABS = ['All', ...serviceCategories.map((c) => c.title)];
+const CATEGORY_TABS = [
+  'All',
+  ...new Set(portfolioData.map((project) => project.category)),
+];
 
-function subcategoriesFor(categoryTitle) {
-  const category = serviceCategories.find((c) => c.title === categoryTitle);
-  return category?.subcategories?.map((s) => s.title) ?? [];
+function subcategoriesFor(category) {
+  return [
+    ...new Set(
+      portfolioData
+        .filter((project) => project.category === category && project.subcategory)
+        .map((project) => project.subcategory),
+    ),
+  ];
 }
 
 function Portfolio() {

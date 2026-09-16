@@ -8,7 +8,7 @@ function GlowBackground({ variant = 'default' }) {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden -z-10"
     >
       <motion.div
         animate={{ y: [0, -30, 0], x: [0, 20, 0] }}

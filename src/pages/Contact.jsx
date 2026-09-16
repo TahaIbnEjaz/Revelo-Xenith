@@ -4,10 +4,9 @@ import SectionReveal from '../components/SectionReveal.jsx';
 import GlowBackground from '../components/GlowBackground.jsx';
 
 const INFO = [
-  { icon: MapPin, label: 'Office', value: '148 Market Street, Suite 400' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 010-2938' },
-  { icon: Mail, label: 'Email', value: 'hello@revelo-xenith.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon–Fri, 9am–6pm' },
+  { icon: MapPin, label: 'Office', value: 'Karachi, Pakistan' },
+  { icon: Phone, label: 'Phone', value: '+92 326 3321658' },
+  { icon: Mail, label: 'Email', value: 'reveloxenith@gmail.com' },
 ];
 
 // Contact page: split layout — info on the left, glass contact form
